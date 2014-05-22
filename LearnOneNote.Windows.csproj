@@ -109,11 +109,51 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="data\AppBarSettings.xaml.cs">
+      <DependentUpon>AppBarSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\ColorPalate.xaml.cs">
+      <DependentUpon>ColorPalate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\DrawMenu.xaml.cs">
+      <DependentUpon>DrawMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\DrawnItemsMenu.xaml.cs">
+      <DependentUpon>DrawnItemsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\KeyboardShortcuts.xaml.cs">
+      <DependentUpon>KeyboardShortcuts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\OneNote.xaml.cs">
+      <DependentUpon>OneNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\PictureMenu.xaml.cs">
+      <DependentUpon>PictureMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\TableCellsMenu.xaml.cs">
+      <DependentUpon>TableCellsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\TableMenu.xaml.cs">
+      <DependentUpon>TableMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\TextGroupMenu.xaml.cs">
+      <DependentUpon>TextGroupMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\TextMenu.xaml.cs">
+      <DependentUpon>TextMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GlobalVars.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -131,9 +171,61 @@
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="data\AppBarSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\ColorPalate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\DrawMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\DrawnItemsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\KeyboardShortcuts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\OneNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\PictureMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\TableCellsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\TableMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\TextGroupMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="data\TextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
