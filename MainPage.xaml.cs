@@ -1,15 +1,13 @@
 using System.Collections.ObjectModel;
-using Windows.UI.Xaml;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Windows.UI.Xaml.Controls;
 
 namespace LearnOneNote
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public partial class MainPage : Page
     {
-        // hold ListBoxItems
+        // ListBox data
         private ObservableCollection<string> _items = new ObservableCollection<string>();
         public ObservableCollection<string> ItemList
         {
@@ -17,15 +15,43 @@ namespace LearnOneNote
             set { _items = value; }
         }
 
-        // initialize ListBoxItems
+        // Init ListBox data
         public void initItemList()
         {
-            ItemList.Clear();
-
-            foreach (string s in GlobalVars.Text) { ItemList.Add(s); }
+            foreach (string s in GlobalVars.Home()) { ItemList.Add(s); }
         }
 
-        // main class
+        // Title text - problem is something in here ...
+        public string titleText
+        {
+            get
+            {
+                string title = Items.SelectedValue.ToString();
+
+                while(title.StartsWith(" "))
+                {
+                    title = title.Remove(0, 1);
+                }
+
+                OnPropertyChanged("titleText");
+
+                return title;
+            }
+        }
+
+        // Something about telling the title that the property was updated - I don't get this part
+        // ... problem could be here, too.
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        // Handle main events
         public MainPage()
         {
             InitializeComponent();
@@ -33,22 +59,8 @@ namespace LearnOneNote
             initItemList();
 
             DataContext = this;
-        }
 
-        // run when a new selection is made in the ListBox
-        private void newSelect(object sender, RoutedEventArgs e)
-        {
-            switch((string)Items.SelectedValue)
-            {
-                case "OneNote":
-                    initItemList();
-                    break;
-
-                case "   The Main Menu":
-                    initItemList();
-                    foreach (string s in GlobalVars.MainMenu()) { ItemList.Insert(2, s); }
-                    break;
-            }
+            Items.SelectedIndex = 0;
         }
     }
 }
