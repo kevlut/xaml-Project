@@ -9,17 +9,19 @@
     
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition x:Name="Row1" Height="1*"/>
+            <RowDefinition x:Name="Row2" Height="9*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition x:Name="Col1" Width="270"/>
+            <ColumnDefinition x:Name="Col2" Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox x:Name="Items" Grid.Column="0" ItemsSource="{Binding ItemList}" SelectionChanged="newSelect" Grid.RowSpan="2" Padding="5" />
+        <ListBox x:Name="Items" Grid.Column="0" ItemsSource="{Binding ItemList}" Grid.RowSpan="2" Padding="5"/>
 
-        <Border Grid.Column="1" Grid.Row="0" BorderThickness="0,0,0,2" BorderBrush="Brown" Margin="10,0,10,0"/>
+        <Border Grid.Column="1" Grid.Row="0" BorderThickness="0,0,0,2" BorderBrush="Brown" Margin="10,0,10,0">
+            <TextBlock x:Name="title" Text="{Binding Path=titleText}" FontSize="60" VerticalAlignment="Center" Padding="20,15,0,0" />
+        </Border>
 
     </Grid>
 </Page>
