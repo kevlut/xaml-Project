@@ -5,9 +5,11 @@
     xmlns:local="using:LearnOneNote">
 
     <Application.Resources>
-
-        <SolidColorBrush x:Key="Foreground" Color="Black" />
-        <SolidColorBrush x:Key="Background" Color="WhiteSmoke" />
+        
+        <Style TargetType="Frame">
+            <Setter Property="Foreground" Value="Brown" />
+        </Style>
+        
         <SolidColorBrush x:Key="ListBoxBackgroundThemeBrush" Color="Wheat" />
         <SolidColorBrush x:Key="ListBoxFocusBackgroundThemeBrush" Color="Wheat" />
         <SolidColorBrush x:Key="ListBoxItemSelectedBackgroundThemeBrush" Color="Goldenrod" />
